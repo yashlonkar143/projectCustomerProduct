@@ -1,0 +1,26 @@
+<p>customerproductdetails works!</p>
+<div class="input-group container">
+
+    <input #custId type="text" class="form-control rounded" placeholder="Enter id" required name="id" aria-label="Search" aria-describedby="search-addon" />
+    <button type="button" (click)="customerDetails(custId.value)" class="btn btn-outline-primary" data-mdb-ripple-init>search</button>
+    <button (click)="addProduct()" class="btn btn-info" style="margin-left:10px" >Add Product</button>
+    <button (click)="addCustomer()" class="btn btn-info" style="margin-left:10px" >Add Cusotmer</button>
+</div>
+
+<div *ngIf="visit">
+    <div>
+        <label for="id">Customer Id:</label>{{customer.id}}
+    </div>
+    <div>
+        <label for="name">Customer Name:</label>{{customer.name}}
+    </div>
+
+    <div *ngFor="let p of customer.products">
+
+        <p>{{p.productId}}</p>
+        <p>{{p.productName}}</p>
+        <p>{{p.price}}</p>
+
+    </div>
+
+</div>
